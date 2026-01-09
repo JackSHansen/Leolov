@@ -1,0 +1,90 @@
+.hero {
+  --cards-stickout: 96px;
+  position: relative;
+  height: clamp(520px, 80vh, 800px);
+  min-height: 520px;
+  overflow: visible;
+  margin-bottom: calc(var(--cards-stickout) + 24px);
+  background: linear-gradient(180deg, #f7fbff 0%, #fff 60%);
+  padding-top: 0;
+  margin-top: 0;
+}
+
+.hero-inner {
+  display: grid;
+  gap: 28px;
+  align-items: center;
+}
+@media (min-width: 900px) {
+  .hero-inner { grid-template-columns: 1.1fr 0.9fr; gap: 48px; }
+}
+
+.hero-copy h1 {
+  margin: 0 0 12px;
+  font-size: clamp(28px, 4vw, 48px);
+  line-height: 1.1;
+}
+.hero-copy p { color: var(--color-muted); margin: 0 0 20px; }
+.hero-cta { display: flex; gap: 12px; flex-wrap: wrap; }
+
+.hero-placeholder {
+  width: 100%;
+  aspect-ratio: 4/3;
+  border-radius: var(--radius);
+  background:
+    radial-gradient(1200px 400px at 0% 0%, #dbeeff 0%, transparent 60%),
+    #e9f2fb;
+  box-shadow: var(--shadow);
+}
+
+.hero-img {
+  width: 100%; height: 100%; object-fit: cover;
+  filter: contrast(1) saturate(1) brightness(.95);
+  object-position: center;
+}
+.overlay {
+  position: absolute; right: 6vw; top: 16%; z-index: 2;
+  color: #1d3f96; text-align: right;
+}
+.overlay h1 {
+  margin: 0;
+  font-size: clamp(42px, 7vw, 78px);
+  font-weight: 700; letter-spacing: .03em;
+}
+.overlay h1 .brand-part.leo { color: inherit; }
+.overlay h1 .brand-part.lov { color: #ffffff; }
+.overlay p {
+  margin-top: 8px;
+  font-size: 12px;
+  color: #ffffff;
+  background: none;
+  padding: 0;
+  border-radius: 0;
+}
+
+.hero-services {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: calc(-1 * var(--cards-stickout));
+  z-index: 3;
+}
+
+.hero .services { padding: 0; background: transparent; }
+.hero .cards {
+  width: min(100% - 32px, var(--container, 1120px));
+  margin-inline: auto;
+}
+@media (max-width: 560px) {
+  .hero .cards { gap: 12px; }
+}
+
+.hero + .services { margin-top: -84px; }
+@media (max-width: 900px) { .hero + .services { margin-top: -56px; } }
+
+@media (max-width: 900px) {
+  .hero { --cards-stickout: 72px; }
+}
+@media (max-width: 560px) {
+  .hero { --cards-stickout: 52px; }
+}

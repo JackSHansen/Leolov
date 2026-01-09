@@ -1,73 +1,31 @@
-# React + TypeScript + Vite
+# Leo-Lov Onepage
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Kort opsummering
+- Formål: En enkel, responsiv one-page hjemmeside for advokatfirmaet Leo-Lov, der følger det udleverede design.
+- Tech: React + TypeScript (.tsx), SCSS, Vite.
+- Struktur: 
+  - Components/NavBar (sticky navigation med ankerlinks)
+  - Components/Hero (heltop billede, titel; Services er placeret i Hero)
+  - Components/Services (4 servicekort)
+  - Components/About (to feature-sektioner: “Intet problem”, “Evig garanti”)
+  - Components/Team (team-galleri med billeder)
+  - Components/Contact (kontaktinfo + Google Maps iFrame)
+  - Components/Footer (simpel footer)
+- Assets: Billeder ligger i src/assets og importeres i komponenterne.
 
-Currently, two official plugins are available:
+Funktionalitet
+- Sticky navbar der forbliver i toppen ved scroll.
+- Ankerlinks der scroller til de korrekte sektioner.
+- Responsive layouts for mobil, tablet og desktop.
+- Hero indeholder services-kort som “hænger” under billedet.
+- Google Maps er indlejret i Contact.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Kør projektet
+- npm install
+- npm run dev (lokal udvikling)
+- npm run build (produktion)
+- npm run preview (forhåndsvisning af build)
 
-## React Compiler
-
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
-
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+Noter
+- Erstat placeholders med endelige billeder efter behov.
+- Justér SCSS-variabler og breakpoints for finpudsning ift. det endelige design.
