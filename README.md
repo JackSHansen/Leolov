@@ -1,5 +1,5 @@
 #security vulnerability found in vite
-## har ikke fixet vulnabilety så denne fil bør ikke benyttes eller åbnes
+## har ikke fixet vulnerability så denne fil bør ikke benyttes eller åbnes
 
 
 
